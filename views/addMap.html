@@ -1,0 +1,36 @@
+<form class="additems">
+  <h1>Add a Ski map</h1>
+  <table>
+     <tr>
+          <td>id: </td>
+          <td><input type="text" class="form-control" placeholder="map id" id="mapId" ng-model="map.id" required></td>
+        </tr>
+      <tr>
+          <td>Name: </td>
+          <td><input type="text" class="form-control" placeholder="map name" id="mapName" ng-model="map.name" required></td>
+        </tr>
+        <tr>
+          <td>Country: </td>
+          <td>
+             <select class="form-control" ng-model="map.country" id="mapCountry" required>
+              <option value="1" >France</option>
+              <option value="2">Italy</option>
+              <option value="3">switzerland</option>
+              <option value="4">Austria</option>
+            </select>
+          </td>
+      </tr>
+        <tr>
+          <td>map image: </td>
+          <td><input type="text" class="form-control" placeholder="Link to image" id="mapImage" ng-model="map.map" required></td>
+      </tr>
+
+    
+
+  </table>
+    
+   
+    <button type="submit" ng-click="addMap(map)" id="mapSubmit"class="btn btn-success">Add map</button>
+</form>
+
+

@@ -1,0 +1,26 @@
+<div class="col-xs-12">
+ <a  href="#!/skilifts/add" class="btn btn-primary" >Add lift</a>
+<table class="table table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Capacity</th>
+		<th>Distance</th>
+		<th>Speed</th>
+		<th>Status</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+  <tr ng-repeat="lift in lifts">
+    <td>{{ lift.name }}</td>
+    <td>{{ lift.type| liftfilter }}</td>
+    <td>{{ lift.capacity }}</td>
+    <td>{{ lift.distance }} KM</td>
+    <td>{{ lift.speed }} KM/H</td>
+    <td>{{ lift.status | statusfilter}}</td>
+    <td><button class="btn btn-success" ng-click="editLift($index)">Edit</button></td>
+    <td><a ng-click="deleteLift($index)" class="btn btn-danger">Delete</a></td>
+  </tr>
+</table>
+
+</div>

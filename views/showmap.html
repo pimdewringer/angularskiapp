@@ -1,0 +1,118 @@
+<div class="mapoverview">
+<canvas id="myCanvas" width="1100" height="500" style="border:1px solid #000000;background:url('{{map.map}}'); background-size: cover;">
+</canvas>
+
+<h3>{{map.name}}</h3>
+<p><b>Country:</b> {{map.country | countryfilter}}</p>
+
+<div class="col-xs-6">
+	<div class="row">
+	<h4>Lifts in {{map.name}}</h4>
+		<table class="table ">
+		
+				<th>Name</th>
+			<th>Type</th>
+			<th>Capacity</th>
+			<th>Distance</th>
+			<th>Speed</th>
+			<th>Status</th>
+				
+			<tr  ng-repeat="lift in lifts" ng-if="lift.skiarea == map.id"><td>{{lift.name}}
+			</td>
+			<td>
+				{{lift.type | liftfilter}}
+			</td>
+			<td>
+				{{lift.capacity}} Km/h
+			</td>		
+			<td>
+				{{lift.distance}} KM
+			</td>
+			<td>
+				{{lift.speed}} KM
+			</td>
+
+			<td>
+				{{lift.status | statusfilter}}
+			</td>
+			</tr>
+		</table>
+			
+		</ul>
+	</div>
+</div>
+
+<div class="col-xs-6">
+	<div class="row">
+	<h4>Pistes in {{map.name}}</h4>
+		<table class="table ">
+		
+		<th>Name</th>
+		<th>Type</th>
+		<th>Status</th>
+		<th>Distance</th>
+				
+			<tr  ng-repeat="piste in pistes" ng-if="piste.skiarea == map.id"><td>{{piste.name}}
+			</td>
+			<td>
+				{{piste.type | pistefilter}}
+			</td>		
+			<td>
+				{{piste.distance}} KM
+			</td>
+
+			<td>
+				{{piste.status | statusfilter}}
+			</td>
+			</tr>
+		</table>
+			
+		</ul>
+	</div>
+</div>
+
+<div class="col-xs-12">
+	<div class="row">
+		<h4>Matches in {{map.name}}</h4>
+
+		<form>
+			<table>
+				<tr>
+					<td>
+						  <select class="form-control" ng-model="match.piste"  required">
+				              <option ng-repeat="piste in pistes" value="{{piste.name}}" ng-if="piste.skiarea == map.id">{{piste.name}}</option>
+				          </select>
+					</td>
+
+					<td>
+						  <select class="form-control" ng-model="match.lift"  required">
+				              <option ng-repeat="lift in lifts" value="{{lift.name}}" ng-if="lift.skiarea == map.id">{{lift.name}}</option>
+				          </select>
+					</td>
+
+				</tr>
+			</table>
+			<button ng-click="addMatch(match)" style='    width: 100%;
+    height: 54px;
+    border-radius: 0px;
+    margin-top: 15px;' class="btn btn-info">Match!</button>
+		</form>
+		<table style="width:100%;" class="table ">
+		
+		<th>Name piste</th>
+		<th>Name Lift</th>
+				
+			<tr  ng-repeat="match in matches" ng-if="match.skiarea == map.id"><td>{{match.piste}}
+			</td>
+			<td>
+				{{match.lift}}
+			</td>		
+
+
+			</tr>
+		</table>
+
+	</div>
+</div>
+
+</div>

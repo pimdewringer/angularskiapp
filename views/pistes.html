@@ -1,0 +1,22 @@
+<div class="col-xs-12" >
+ <a  href="#!/skipistes/add" class="btn btn-primary" >Add Piste</a>
+<table class="table table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Status</th>
+		<th>Distance</th>
+		<th>Edit</th>
+		<th>Delete</th>
+		
+	</tr>
+  <tr ng-repeat="piste in pistes">
+    <td>{{ piste.name }}</td>
+    <td>{{ piste.type | pistefilter }}</td>
+    <td>{{ piste.status | statusfilter}}</td>
+    <td>{{ piste.distance }} KM/H</td>
+       <td><button class="btn btn-success" ng-click="editPiste($index)">Edit</button></td>
+      <td><a ng-click="deletePiste($index)" class="btn btn-danger">Delete</a></td>
+  </tr>
+</table>
+</div>

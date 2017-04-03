@@ -1,0 +1,55 @@
+<form class="additems">
+  <h1>Add a Ski lift</h1>
+  <table>
+      <tr>
+          <td>Name: </td>
+          <td><input type="text" class="form-control" placeholder="Skilift name" ng-model="lifts.name" required></td>
+        </tr>
+        <tr>
+          <td>Type: </td>
+          <td>
+             <select class="form-control" ng-model="lifts.type"  required">
+              <option value="1" >Chairlift</option>
+              <option value="2">Anchor</option>
+              <option value="3">Cabine</option>
+              <option value="4">Train</option>
+            </select>
+          </td>
+      </tr>
+        <tr>
+          <td>Capacity: </td>
+          <td><input type="text" class="form-control" placeholder="Capacity/h" ng-model="lifts.capacity" required></td>
+      </tr>
+        <tr>
+          <td>Distance: </td>
+          <td><input type="text" class="form-control" placeholder="distance of the lift " ng-model="lifts.distance" required></td>
+      </tr>
+      <tr>
+        <td>Speed: </td>
+          <td><input type="text" class="form-control" placeholder="speed in km/h" ng-model="lifts.speed" required></td>
+      </tr>
+      <tr>
+      <tr>
+        <td>Status: </td>
+          <td> <select class="form-control" ng-model="lifts.status"  required">
+              <option value="1" >Open</option>
+              <option value="2">Closed</option>
+              <option value="3">Soon to be opened</option>
+            </select></td>
+      </tr>
+      <tr>
+        <td>Ski area: </td>
+          <td>
+            <select class="form-control" ng-model="lifts.skiarea"  required">
+              <option ng-repeat="area in areas" value="{{area.id}}">{{area.name}} {{area.id}}</option>
+              </select>
+          </td>
+      </tr>
+
+  </table>
+    
+   
+    <button type="submit" ng-click="addLift(lifts)" class="btn btn-success">Add lift</button>
+</form>
+
+

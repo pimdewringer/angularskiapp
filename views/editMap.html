@@ -1,0 +1,36 @@
+<form class="additems">
+  <h1>Edit a Ski map</h1>
+  <table>
+     <tr>
+          <td>id: </td>
+          <td><input type="text" class="form-control" placeholder="map id" ng-model="maps.id" required></td>
+        </tr>
+      <tr>
+          <td>Name: </td>
+          <td><input type="text" class="form-control" placeholder="map name" ng-model="maps.name" required></td>
+        </tr>
+        <tr>
+          <td>Country: </td>
+          <td>
+             <select class="form-control" ng-model="map.country"  required">
+              <option value="1" >France</option>
+              <option value="2">Italy</option>
+              <option value="3">switzerland</option>
+              <option value="4">Austria</option>
+            </select>
+          </td>
+      </tr>
+        <tr>
+          <td>map image: </td>
+          <td><input type="text" class="form-control" placeholder="Link to image" ng-model="maps.map" required></td>
+      </tr>
+
+    
+
+  </table>
+    
+   
+    <button type="submit" ng-click="editMap()" class="btn btn-success">Edit</button>
+</form>
+
+

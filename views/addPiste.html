@@ -1,0 +1,46 @@
+<form class="additems">
+  <h1>Add a Ski piste</h1>
+  <table>
+      <tr>
+          <td>Name: </td>
+          <td><input type="text" class="form-control" id="pisteName" placeholder="Skipiste name" ng-model="pistes.name" required></td>
+        </tr>
+        <tr>
+          <td>Type: </td>
+          <td>
+             <select class="form-control" id="pisteType" ng-model="pistes.type"  required>
+              <option value="1" >Green</option>
+              <option value="2">Blue</option>
+              <option value="3">Red</option>
+              <option value="4">Black</option>
+            </select>
+          </td>
+      </tr>
+        <tr>
+          <td>Distance: </td>
+          <td><input type="text" class="form-control" id="pisteDistance" placeholder="distance of the piste " ng-model="pistes.distance" required></td>
+      </tr>
+  
+        <td>Status: </td>
+          <td> <select class="form-control" id="pisteStatus" ng-model="pistes.status"  required>
+              <option value="1" >Open</option>
+              <option value="2">Closed</option>
+              <option value="3">Soon to be opened</option>
+            </select></td>
+      </tr>
+      <tr>
+        <td>Ski area: </td>
+          <td>
+            <select class="form-control" id="pisteArea" ng-model="pistes.skiarea"  required>
+              <option ng-repeat="area in areas" value="{{area.id}}">{{area.name}} {{area.id}}</option>
+              </select>
+          </td>
+      </tr>
+
+  </table>
+    
+   
+    <button type="submit" ng-click="addPiste(pistes)" id="pisteSubmit" class="btn btn-success">Add lift</button>
+</form>
+
+
